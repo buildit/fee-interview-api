@@ -19,6 +19,10 @@ const questions = [
     id: 5,
     title: 'In the film Pan’s Labyrinth, what is the little girl named?',
   },
+  {
+    id: 6,
+    title: 'How do you spell 2?',
+  },
 ];
 
 const answers = [
@@ -140,6 +144,30 @@ const answers = [
     id: 20,
     questionId: 5,
     title: 'Nancy',
+    isCorrect: false,
+  },
+  {
+    id: 21,
+    questionId: 6,
+    title: 'two',
+    isCorrect: true,
+  },
+  {
+    id: 22,
+    questionId: 6,
+    title: 'too',
+    isCorrect: false,
+  },
+  {
+    id: 23,
+    questionId: 6,
+    title: 'to',
+    isCorrect: false,
+  },
+  {
+    id: 24,
+    questionId: 6,
+    title: 'tough',
     isCorrect: false,
   },
 ];

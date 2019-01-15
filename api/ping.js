@@ -1,10 +1,13 @@
 'use strict';
 
+const { updatedTime } = require('./updatedtime.json');
+
 module.exports.index = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
       message: 'API works!',
+      updatedTime,
     }),
   };
 

@@ -43,7 +43,7 @@ functions:
           path: questions
           method: get
   ping:
-    handler: api/ping.ping
+    handler: api/ping.index
     events:
       - http:
           path: ping

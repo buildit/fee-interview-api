@@ -9,8 +9,9 @@
     "test": "jest --watch --coverage",
     "test:ci": "jest --coverage",
     "test:int:ci": "newman run postman_collection.json",
-    "deploy:staging": "serverless deploy",
-    "deploy:production": "serverless deploy --stage production"
+    "deploy:staging": "npm run writetime && serverless deploy",
+    "deploy:production": "npm run writetime && serverless deploy --stage production",
+    "writetime": "echo \"{ \\\"updatedTime\\\": \\\"$(date -u)\\\" }\" > api/updatedtime.json"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
