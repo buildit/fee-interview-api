@@ -1,0 +1,18 @@
+service: fee-interview
+
+plugins:
+  - serverless-jest-plugin
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+region: us-east-2
+
+functions:
+  ping:
+    handler: api/ping.ping
+    events:
+      - http:
+          path: ping
+          method: get
