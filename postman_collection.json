@@ -1,0 +1,184 @@
+{
+  "info": {
+    "_postman_id": "005e5f4a-6fb0-4e34-983a-fe6e2e06237f",
+    "name": "FEE One Shot Interview API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all questions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "43d1ca53-2c02-4b49-bfc1-d726fdb023e9",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"response is ok\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Returns an array of non-zero length\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(0)",
+              "})",
+              "",
+              "pm.test(\"Questions have id and title\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.every((question) =>",
+              "        question.id !== undefined &&",
+              "        question.title !== undefined",
+              "    )).to.eql(true)",
+              "})",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "https://lik3zufgci.execute-api.us-east-2.amazonaws.com/staging/questions",
+          "protocol": "https",
+          "host": ["lik3zufgci", "execute-api", "us-east-2", "amazonaws", "com"],
+          "path": ["staging", "questions"]
+        },
+        "description": "Get all questions from the API"
+      },
+      "response": []
+    },
+    {
+      "name": "Get all answers",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "7d236bd6-4421-4de3-b5de-bc00f3bf1077",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"response is ok\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Returns an array of non-zero length\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(1)",
+              "})",
+              "",
+              "pm.test(\"Answers have id, questionId, title and isCorrect\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.every((answer) => ",
+              "        answer.id !== undefined &&",
+              "        answer.questionId !== undefined &&",
+              "        answer.title !== undefined &&",
+              "        answer.isCorrect !== undefined",
+              "    )).to.eql(true)",
+              "})",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "https://lik3zufgci.execute-api.us-east-2.amazonaws.com/staging/answers",
+          "protocol": "https",
+          "host": ["lik3zufgci", "execute-api", "us-east-2", "amazonaws", "com"],
+          "path": ["staging", "answers"]
+        },
+        "description": "Get all questions from the API"
+      },
+      "response": []
+    },
+    {
+      "name": "Get one question",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2f116918-141e-4adc-8d59-2ea4ecc8db1b",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"response is ok\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"returns the correct question id\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.id).to.eql(1)",
+              "})"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "https://lik3zufgci.execute-api.us-east-2.amazonaws.com/staging/questions/1",
+          "protocol": "https",
+          "host": ["lik3zufgci", "execute-api", "us-east-2", "amazonaws", "com"],
+          "path": ["staging", "questions", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get answers for one question",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "05792d9b-f1c3-488a-ad70-38b22bb4b3f6",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"response is ok\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Returns an array of non-zero length\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(1)",
+              "})",
+              "",
+              "pm.test(\"Answers have id, questionId, title and isCorrect\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.every((answer) => ",
+              "        answer.id !== undefined &&",
+              "        answer.questionId !== undefined &&",
+              "        answer.title !== undefined &&",
+              "        answer.isCorrect !== undefined",
+              "    )).to.eql(true)",
+              "})",
+              "",
+              "pm.test(\"Answers all have the correct questionId (1)\", () => {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.every((answer) => answer.questionId === 1)).to.eql(true)",
+              "})"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "https://lik3zufgci.execute-api.us-east-2.amazonaws.com/staging/answers/1",
+          "protocol": "https",
+          "host": ["lik3zufgci", "execute-api", "us-east-2", "amazonaws", "com"],
+          "path": ["staging", "answers", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
