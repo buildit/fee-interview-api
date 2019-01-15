@@ -6,10 +6,42 @@ plugins:
 provider:
   name: aws
   runtime: nodejs8.10
-
-region: us-east-2
+  stage: staging
+  region: us-east-2
 
 functions:
+  oneAnswer:
+    handler: api/oneAnswer.index
+    events:
+      - http:
+          path: answers/{id}
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+  allAnswers:
+    handler: api/allAnswers.index
+    events:
+      - http:
+          path: answers
+          method: get
+  oneQuestion:
+    handler: api/oneQuestion.index
+    events:
+      - http:
+          path: questions/{id}
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+  allQuestions:
+    handler: api/allQuestions.index
+    events:
+      - http:
+          path: questions
+          method: get
   ping:
     handler: api/ping.ping
     events:
