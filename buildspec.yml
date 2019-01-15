@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Dependencies
+      - npm install
+  pre_build:
+    commands:
+      - echo Linting and Unit Testing
+      - npm run lint
+      - npm run test:ci
+      - echo Deploying to Staging
+      - npm run deploy:staging
+      - echo Running Integration Tests
+      - npm run test:int:ci
+  build:
+    commands:
+      - echo Deploying to Production
+      - yarn deploy:production
+  post_build:
+    commands:
+      - echo Deploy completed on `date`
