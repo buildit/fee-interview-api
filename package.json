@@ -10,7 +10,7 @@
     "test:ci": "jest --coverage",
     "test:int:ci": "newman run postman_collection.json",
     "deploy:staging": "npm run writetime && serverless deploy",
-    "deploy:production": "npm run writetime && serverless deploy --stage production",
+    "deploy:production": "npm run writetime && serverless deploy --stage v1",
     "writetime": "echo \"{ \\\"updatedTime\\\": \\\"$(date -u)\\\" }\" > api/updatedtime.json"
   },
   "devDependencies": {
