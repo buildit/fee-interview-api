@@ -23,6 +23,10 @@ const questions = [
     id: 6,
     title: 'How do you spell 2?',
   },
+  {
+    id: 7,
+    title: 'How are you feeling right now?',
+  },
 ];
 
 const answers = [
@@ -168,6 +172,30 @@ const answers = [
     id: 24,
     questionId: 6,
     title: 'tough',
+    isCorrect: false,
+  },
+  {
+    id: 25,
+    questionId: 7,
+    title: '🤔',
+    isCorrect: true,
+  },
+  {
+    id: 26,
+    questionId: 7,
+    title: '😡',
+    isCorrect: false,
+  },
+  {
+    id: 27,
+    questionId: 7,
+    title: '😭',
+    isCorrect: false,
+  },
+  {
+    id: 28,
+    questionId: 7,
+    title: '🤯',
     isCorrect: false,
   },
 ];
