@@ -22,6 +22,10 @@ Questions and Answers are stored in a "text DB" in the file `api/text.db.js`
 
 There are no production dependencies, everything is dev-dependencies for things like linting, testing, deploying, etc.
 
+## Deploying
+
+This is deployed automatically when an update is pushed to the master branch. Please do not deploy manually.
+
 ## Pipeline
 
 This is built by AWS's CodePipeline at https://us-east-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/FEE-Interview-API/view?region=us-east-2
