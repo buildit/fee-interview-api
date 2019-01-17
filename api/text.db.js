@@ -27,6 +27,10 @@ const questions = [
     id: 7,
     title: 'How are you feeling right now?',
   },
+  {
+    id: 8,
+    title: "Who is Eric Cartman's father?",
+  },
 ];
 
 const answers = [
@@ -196,6 +200,30 @@ const answers = [
     id: 28,
     questionId: 7,
     title: '🤯',
+    isCorrect: false,
+  },
+  {
+    id: 29,
+    questionId: 8,
+    title: 'Jack Tenorman',
+    isCorrect: true,
+  },
+  {
+    id: 30,
+    questionId: 8,
+    title: 'Liane Cartman',
+    isCorrect: false,
+  },
+  {
+    id: 31,
+    questionId: 8,
+    title: 'Mr. Hat',
+    isCorrect: false,
+  },
+  {
+    id: 32,
+    questionId: 8,
+    title: '1989 Denver Broncos',
     isCorrect: false,
   },
 ];
