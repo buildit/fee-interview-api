@@ -16,6 +16,7 @@ functions:
       - http:
           path: answers/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -26,12 +27,14 @@ functions:
       - http:
           path: answers
           method: get
+          cors: true
   oneQuestion:
     handler: api/oneQuestion.index
     events:
       - http:
           path: questions/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -42,9 +45,11 @@ functions:
       - http:
           path: questions
           method: get
+          cors: true
   ping:
     handler: api/ping.index
     events:
       - http:
           path: ping
           method: get
+          cors: true
