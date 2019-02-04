@@ -5,6 +5,9 @@ const { updatedTime } = require('./updatedtime.json');
 module.exports.index = (event, context, callback) => {
   const response = {
     statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     body: JSON.stringify({
       message: 'API works!',
       updatedTime,

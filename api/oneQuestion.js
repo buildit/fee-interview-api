@@ -10,6 +10,9 @@ module.exports.index = (event, context, callback) => {
   if (selectedQuestionArray.length === 1) {
     const response = {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify(selectedQuestionArray[0]),
     };
 
@@ -17,6 +20,9 @@ module.exports.index = (event, context, callback) => {
   } else {
     const response = {
       statusCode: 404,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify({
         error: `Question ${questionId} not found`,
       }),
